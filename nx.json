@@ -9,31 +9,31 @@
   },
   "projects": {
     "webshop": {
-      "tags": []
+      "tags": ["app"]
     },
     "webshop-e2e": {
       "tags": []
     },
     "stock-mgmt": {
-      "tags": []
+      "tags": ["app"]
     },
     "stock-mgmt-e2e": {
       "tags": []
     },
     "ui-kit": {
-      "tags": []
+      "tags": ["ui"]
     },
     "product": {
-      "tags": []
+      "tags": ["feature"]
     },
     "payment": {
-      "tags": []
+      "tags": ["feature"]
     },
     "auth": {
-      "tags": []
+      "tags": ["util"]
     },
     "stock": {
-      "tags": []
+      "tags": ["feature"]
     }
   }
 }

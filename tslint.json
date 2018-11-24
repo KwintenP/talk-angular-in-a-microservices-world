@@ -95,7 +95,10 @@
       {
         "allow": [],
         "depConstraints": [
-          { "sourceTag": "*", "onlyDependOnLibsWithTags": ["*"] }
+          { "sourceTag": "app", "onlyDependOnLibsWithTags": ["ui", "util", "feature"] },
+          { "sourceTag": "feature", "onlyDependOnLibsWithTags": ["ui", "util"] },
+          { "sourceTag": "ui", "onlyDependOnLibsWithTags": [] },
+          { "sourceTag": "util", "onlyDependOnLibsWithTags": [] }
         ]
       }
     ]

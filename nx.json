@@ -7,5 +7,18 @@
     "tslint.json": "*",
     "nx.json": "*"
   },
-  "projects": {}
+  "projects": {
+    "webshop": {
+      "tags": []
+    },
+    "webshop-e2e": {
+      "tags": []
+    },
+    "stock-mgmt": {
+      "tags": []
+    },
+    "stock-mgmt-e2e": {
+      "tags": []
+    }
+  }
 }

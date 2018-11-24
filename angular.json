@@ -2,7 +2,254 @@
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
   "newProjectRoot": "",
-  "projects": {},
+  "projects": {
+    "webshop": {
+      "root": "apps/webshop/",
+      "sourceRoot": "apps/webshop/src",
+      "projectType": "application",
+      "prefix": "demo",
+      "schematics": {
+        "@schematics/angular:component": {
+          "styleext": "scss"
+        }
+      },
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/webshop",
+            "index": "apps/webshop/src/index.html",
+            "main": "apps/webshop/src/main.ts",
+            "polyfills": "apps/webshop/src/polyfills.ts",
+            "tsConfig": "apps/webshop/tsconfig.app.json",
+            "assets": [
+              "apps/webshop/src/favicon.ico",
+              "apps/webshop/src/assets"
+            ],
+            "styles": [
+              "apps/webshop/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/webshop/src/environments/environment.ts",
+                  "with": "apps/webshop/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "webshop:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "webshop:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "webshop:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/webshop/tsconfig.app.json",
+              "apps/webshop/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/builders:jest",
+          "options": {
+            "jestConfig": "apps/webshop/jest.config.js",
+            "tsConfig": "apps/webshop/tsconfig.spec.json",
+            "setupFile": "apps/webshop/src/test-setup.ts"
+          }
+        }
+      }
+    },
+    "webshop-e2e": {
+      "root": "apps/webshop-e2e",
+      "projectType": "application",
+      "prefix": "",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/builders:cypress",
+          "options": {
+            "cypressConfig": "apps/webshop-e2e/cypress.json",
+            "tsConfig": "apps/webshop-e2e/tsconfig.e2e.json",
+            "devServerTarget": "webshop:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "webshop:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": "e2e/tsconfig.e2e.json",
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "stock-mgmt": {
+      "root": "apps/stock-mgmt/",
+      "sourceRoot": "apps/stock-mgmt/src",
+      "projectType": "application",
+      "prefix": "demo",
+      "schematics": {
+        "@schematics/angular:component": {
+          "styleext": "scss"
+        }
+      },
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/stock-mgmt",
+            "index": "apps/stock-mgmt/src/index.html",
+            "main": "apps/stock-mgmt/src/main.ts",
+            "polyfills": "apps/stock-mgmt/src/polyfills.ts",
+            "tsConfig": "apps/stock-mgmt/tsconfig.app.json",
+            "assets": [
+              "apps/stock-mgmt/src/favicon.ico",
+              "apps/stock-mgmt/src/assets"
+            ],
+            "styles": [
+              "apps/stock-mgmt/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/stock-mgmt/src/environments/environment.ts",
+                  "with": "apps/stock-mgmt/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "stock-mgmt:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "stock-mgmt:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "stock-mgmt:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/stock-mgmt/tsconfig.app.json",
+              "apps/stock-mgmt/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/builders:jest",
+          "options": {
+            "jestConfig": "apps/stock-mgmt/jest.config.js",
+            "tsConfig": "apps/stock-mgmt/tsconfig.spec.json",
+            "setupFile": "apps/stock-mgmt/src/test-setup.ts"
+          }
+        }
+      }
+    },
+    "stock-mgmt-e2e": {
+      "root": "apps/stock-mgmt-e2e",
+      "projectType": "application",
+      "prefix": "",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/builders:cypress",
+          "options": {
+            "cypressConfig": "apps/stock-mgmt-e2e/cypress.json",
+            "tsConfig": "apps/stock-mgmt-e2e/tsconfig.e2e.json",
+            "devServerTarget": "stock-mgmt:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "stock-mgmt:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": "e2e/tsconfig.e2e.json",
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    }
+  },
   "cli": {
     "warnings": {
       "typescriptMismatch": false,
@@ -10,5 +257,6 @@
     },
     "defaultCollection": "@nrwl/schematics",
     "packageManager": "yarn"
-  }
+  },
+  "defaultProject": "webshop"
 }

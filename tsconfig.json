@@ -16,6 +16,21 @@
     ],
     "baseUrl": ".",
     "paths": {
+      "@demo/ui-kit": [
+        "libs/ui-kit/src/index.ts"
+      ],
+      "@demo/product": [
+        "libs/product/src/index.ts"
+      ],
+      "@demo/payment": [
+        "libs/payment/src/index.ts"
+      ],
+      "@demo/auth": [
+        "libs/auth/src/index.ts"
+      ],
+      "@demo/stock": [
+        "libs/stock/src/index.ts"
+      ]
     }
   },
   "exclude": [

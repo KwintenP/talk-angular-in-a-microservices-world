@@ -19,6 +19,21 @@
     },
     "stock-mgmt-e2e": {
       "tags": []
+    },
+    "ui-kit": {
+      "tags": []
+    },
+    "product": {
+      "tags": []
+    },
+    "payment": {
+      "tags": []
+    },
+    "auth": {
+      "tags": []
+    },
+    "stock": {
+      "tags": []
     }
   }
 }
